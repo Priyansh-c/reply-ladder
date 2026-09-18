@@ -76,3 +76,5 @@ signature verification have to run somewhere your key secret is safe.
 Manual. The buyer pays, messages you on WhatsApp with their email and proof of
 payment, and you send their watermarked copy with `npm run pack`. See
 DELIVERY.md.
+# reply-ladder
+# reply-ladder
