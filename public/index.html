@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07090d">
+<meta name="description" content="The Reply Ladder: the cold outreach system that takes a stranger from first message, to reply, to qualified conversation, to booked call. 35 scripts across SMS, DM and email, plus what to say on the call.">
+<meta property="og:title" content="The Reply Ladder">
+<meta property="og:description" content="Stop sending random cold messages. The outreach system that ends in booked calls.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="PASTE_YOUR_DOMAIN_HERE">
+<meta property="og:image" content="PASTE_1200x630_SHARE_IMAGE_URL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129355;</text></svg>">
+<title>The Reply Ladder</title>
+</head>
+<body>
+<style>
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#07090d;color:#f5f7fa;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button,input{font:inherit;}
+
+:root{
+  --bg:#07090d;--bg-2:#0b0f16;--bg-3:#10151e;
+  --card:rgba(255,255,255,.045);--card-strong:rgba(255,255,255,.07);
+  --white:#f7f9fc;--text:#e8ecf2;--muted:#8d96a5;--muted-2:#626b79;
+  --line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.15);
+  --lime:#b8ff4d;--lime-2:#8ee82e;
+  --blue:#5c7cff;--purple:#9a6cff;--red:#ff5c5c;
+  --max:1180px;
+}
+
+.container{width:min(var(--max),calc(100% - 48px));margin:0 auto;}
+.narrow{max-width:800px;margin-inline:auto;}
+.display{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-weight:850;letter-spacing:-.065em;line-height:.94;}
+.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:700;}
+.green{color:var(--lime);}
+.gradient-text{background:linear-gradient(100deg,#fff 0%,#c9ff82 45%,#8ee82e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.glow{position:relative;}
+.glow::before{content:"";position:absolute;width:500px;height:500px;left:50%;top:30%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(184,255,77,.11),rgba(92,124,255,.04),transparent 70%);filter:blur(30px);pointer-events:none;z-index:-1;}
+
+.topbar{position:relative;z-index:5;background:rgba(7,9,13,.86);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);text-align:center;padding:11px 20px;color:#aeb6c3;font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;}
+.topbar span{color:var(--lime);}
+
+.nav{position:relative;z-index:4;padding:23px 0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:850;letter-spacing:-.02em;}
+.nav-link{color:var(--muted);text-decoration:none;font-size:13px;}
+.nav-link:hover{color:var(--white);}
+
+.hero{position:relative;padding:72px 0 110px;overflow:hidden;}
+.hero::before{content:"";position:absolute;width:800px;height:800px;right:-250px;top:-300px;background:radial-gradient(circle,rgba(92,124,255,.13),transparent 67%);pointer-events:none;}
+.hero::after{content:"";position:absolute;width:600px;height:600px;left:-300px;bottom:-400px;background:radial-gradient(circle,rgba(184,255,77,.08),transparent 70%);pointer-events:none;}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;gap:80px;align-items:center;}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(184,255,77,.25);background:rgba(184,255,77,.07);color:var(--lime);border-radius:999px;padding:8px 13px;margin-bottom:25px;}
+.hero-kicker::before{content:"";width:6px;height:6px;background:var(--lime);border-radius:50%;box-shadow:0 0 12px var(--lime);}
+.hero h1{max-width:720px;font-size:clamp(55px,7vw,91px);margin:0 0 27px;}
+.hero-sub{max-width:650px;color:var(--muted);font-size:19px;line-height:1.65;}
+.hero-sub strong{color:var(--text);}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:34px;}
+
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 27px;background:var(--lime);color:#07090d;border:1px solid rgba(255,255,255,.18);border-radius:12px;text-decoration:none;font-size:15px;font-weight:850;box-shadow:0 0 0 1px rgba(184,255,77,.12),0 14px 35px rgba(184,255,77,.12);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;}
+.cta:hover{transform:translateY(-2px);background:#c7ff72;box-shadow:0 0 0 1px rgba(184,255,77,.2),0 18px 45px rgba(184,255,77,.2);}
+.cta:focus-visible{outline:2px solid white;outline-offset:4px;}
+.cta-arrow{margin-left:10px;font-size:18px;}
+.cta-small{color:var(--muted-2);font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;line-height:1.5;max-width:290px;}
+.hero-note{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;color:#727b89;font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+.hero-note span::before{color:var(--lime);content:"\2713 ";}
+
+.phone-wrap{position:relative;}
+.phone-glow{position:absolute;width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(92,124,255,.19),transparent 68%);filter:blur(30px);}
+.phone{position:relative;width:min(390px,100%);margin:auto;background:linear-gradient(145deg,#171c26,#090c11);border:1px solid rgba(255,255,255,.14);border-radius:34px;padding:10px;box-shadow:0 45px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.025);transform:rotate(1deg);}
+.phone-screen{overflow:hidden;background:#eef0f2;border-radius:26px;}
+.phone-header{background:#fff;padding:17px;border-bottom:1px solid #ddd;display:flex;gap:10px;align-items:center;}
+.avatar{width:38px;height:38px;background:linear-gradient(135deg,#d8dce2,#aab1bc);border-radius:50%;flex:none;}
+.phone-name{color:#111;font-size:13px;font-weight:800;}
+.phone-status{color:#858b93;font-size:10px;}
+.messages{padding:21px 17px 28px;}
+.msg-day{color:#92979e;text-align:center;margin:0 0 10px;font-family:"SFMono-Regular",Consolas,monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;}
+.msg{max-width:88%;padding:12px 14px;border-radius:16px;margin-bottom:10px;font-size:12px;line-height:1.45;color:#20242a;}
+.msg.out{margin-left:auto;background:#d9dce0;}
+.msg.in{background:#fff;}
+.msg.reply{background:#c6efcb;}
+.phone-result{margin:10px 17px 18px;padding:15px;background:#0b0d11;color:var(--lime);border-radius:11px;font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;line-height:1.5;text-transform:uppercase;letter-spacing:.06em;}
+.phone-caption{text-align:center;margin-top:22px;color:var(--muted-2);font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;}
+
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.018);}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.trust-item{padding:30px 20px;text-align:center;border-right:1px solid var(--line);}
+.trust-item:last-child{border-right:0;}
+.trust-number{display:block;color:var(--white);font-size:39px;font-weight:850;letter-spacing:-.055em;}
+.trust-label{display:block;margin-top:5px;color:var(--muted-2);font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;}
+.trust-note{text-align:center;color:#596170;padding:0 20px 17px;font-size:10px;}
+
+.section{position:relative;padding:125px 0;border-bottom:1px solid var(--line);}
+.section-intro{max-width:850px;margin-bottom:60px;}
+.section-label{margin-bottom:16px;color:var(--lime);}
+.section h2{margin:0 0 24px;font-size:clamp(43px,5.5vw,72px);}
+.section-intro p{color:var(--muted);font-size:18px;line-height:1.7;}
+
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;align-items:start;}
+.problem{position:relative;min-height:285px;padding:31px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:inset 0 1px rgba(255,255,255,.035);}
+.problem::after{content:"";position:absolute;width:90px;height:90px;right:0;top:0;background:radial-gradient(circle,rgba(184,255,77,.09),transparent 70%);pointer-events:none;}
+.problem-num{color:var(--lime);font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;letter-spacing:.12em;}
+.problem h3{margin:35px 0 15px;font-size:26px;line-height:1.1;letter-spacing:-.04em;}
+.problem p{margin:0;color:var(--muted);font-size:14px;line-height:1.65;}
+
+.statement{position:relative;padding:145px 20px;overflow:hidden;background:linear-gradient(135deg,#0b1018,#080a0e);border-bottom:1px solid var(--line);}
+.statement::before{content:"";position:absolute;width:700px;height:500px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(184,255,77,.08),transparent 70%);filter:blur(25px);}
+.statement h2{position:relative;max-width:950px;margin:auto;text-align:center;font-size:clamp(43px,6.5vw,83px);line-height:.98;letter-spacing:-.06em;}
+.statement .accent{color:var(--lime);}
+
+.method{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start;}
+.method-sticky{position:sticky;top:35px;}
+.method-sticky h2{margin:20px 0;font-size:clamp(43px,5.2vw,66px);}
+.method-sticky p{color:var(--muted);font-size:16px;line-height:1.7;}
+.ladder{position:relative;border-left:1px solid rgba(184,255,77,.28);}
+.ladder-step{position:relative;padding:0 0 55px 48px;}
+.ladder-step::before{content:"";position:absolute;left:-7px;top:2px;width:13px;height:13px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px #07090d,0 0 20px rgba(184,255,77,.55);}
+.ladder-step:last-child{padding-bottom:0;}
+.step-label{color:var(--lime);margin-bottom:7px;}
+.ladder-step h3{margin:0 0 10px;font-size:29px;line-height:1.1;letter-spacing:-.04em;}
+.ladder-step p{margin:0;max-width:570px;color:var(--muted);font-size:15px;line-height:1.7;}
+
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.module{position:relative;min-height:260px;padding:34px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));overflow:hidden;}
+.module::after{content:"";position:absolute;right:-80px;bottom:-100px;width:220px;height:220px;background:radial-gradient(circle,rgba(92,124,255,.08),transparent 70%);}
+.module.featured{grid-column:1/-1;min-height:230px;background:linear-gradient(135deg,rgba(184,255,77,.09),rgba(255,255,255,.025));border-color:rgba(184,255,77,.24);}
+.module-number{color:var(--lime);font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
+.module h3{margin:22px 0 13px;font-size:30px;line-height:1.04;letter-spacing:-.045em;}
+.module p{position:relative;z-index:1;max-width:670px;margin:0;color:var(--muted);font-size:14px;line-height:1.7;}
+.count{margin-top:22px;display:inline-flex;padding:6px 9px;border:1px solid var(--line);border-radius:7px;color:#a4acb9;background:rgba(255,255,255,.035);font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;}
+
+.preview-wrap{position:relative;padding:110px 0;background:#090d13;border-bottom:1px solid var(--line);}
+.preview-wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(92,124,255,.035) 50%,transparent 100%);pointer-events:none;}
+.script-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.script{overflow:hidden;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:17px;box-shadow:inset 0 1px rgba(255,255,255,.035);}
+.script-top{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--lime);background:rgba(255,255,255,.025);font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;}
+.script-body{padding:25px;}
+.script-label{margin-bottom:7px;color:var(--lime);font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.script-use{margin:0 0 22px;color:var(--muted);font-size:13px;line-height:1.6;}
+.script-message{padding:17px;margin-bottom:22px;border:1px solid rgba(255,255,255,.08);border-left:2px solid var(--lime);border-radius:10px;background:#0b0f15;color:#dce1e8;font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;line-height:1.65;white-space:pre-line;}
+.script-why{color:var(--muted-2);font-size:12px;line-height:1.65;}
+
+/* ---------- how delivery works ---------- */
+.how-deliver{margin:0 45px 8px;padding:24px 26px;border:1px solid rgba(184,255,77,.22);border-radius:14px;background:rgba(184,255,77,.05);}
+.deliver-steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:11px;}
+.deliver-steps li{color:var(--muted);font-size:14px;line-height:1.6;}
+.deliver-steps b{color:var(--text);font-weight:700;}
+.deliver-note{margin:16px 0 0;color:var(--muted-2);font-size:12.5px;line-height:1.7;}
+@media (max-width:600px){.how-deliver{margin:0 23px 8px;padding:20px;}}
+
+/* ---------- REAL PROOF SCREENSHOTS ---------- */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.shot{overflow:hidden;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:inset 0 1px rgba(255,255,255,.035);}
+.shot-img{padding:16px 16px 0;}
+.shot-img img{border-radius:10px;border:1px solid rgba(255,255,255,.07);}
+.shot-cap{display:flex;align-items:center;gap:10px;padding:16px 20px 18px;color:var(--muted);font-size:13px;line-height:1.5;}
+.shot-tag{flex:0 0 auto;padding:4px 8px;border-radius:6px;background:rgba(184,255,77,.11);border:1px solid rgba(184,255,77,.3);color:var(--lime);font-family:"SFMono-Regular",Consolas,monospace;font-size:8px;letter-spacing:.09em;text-transform:uppercase;}
+.shot-foot{margin-top:22px;color:var(--muted-2);font-size:13px;line-height:1.7;max-width:760px;}
+
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.who-card{padding:30px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.035);}
+.who-card h3{margin:21px 0 13px;font-size:25px;line-height:1.08;letter-spacing:-.04em;}
+.who-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.65;}
+.not-for{margin-top:17px;padding:35px;border:1px solid rgba(255,92,92,.2);border-radius:17px;background:linear-gradient(135deg,rgba(255,92,92,.065),rgba(255,255,255,.02));}
+.not-for h3{margin:0 0 18px;font-size:25px;letter-spacing:-.035em;}
+.not-for ul{margin:0;padding-left:20px;}
+.not-for li{margin-bottom:11px;color:var(--muted);font-size:14px;}
+
+.offer-section{position:relative;background:radial-gradient(circle at 50% 0%,rgba(184,255,77,.075),transparent 48%),#07090d;}
+.offer-box{position:relative;max-width:880px;margin:auto;overflow:hidden;border:1px solid rgba(184,255,77,.23);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:0 40px 100px rgba(0,0,0,.35);}
+.offer-head{padding:54px 50px 48px;text-align:center;border-bottom:1px solid var(--line);}
+.offer-head h2{margin:14px 0;font-size:clamp(47px,6vw,72px);letter-spacing:-.06em;}
+.offer-head p{max-width:600px;margin:auto;color:var(--muted);font-size:16px;}
+.offer-items{padding:15px 45px;}
+.offer-item{display:flex;gap:15px;padding:19px 0;border-bottom:1px solid var(--line);}
+.offer-item:last-child{border-bottom:0;}
+.check{width:25px;height:25px;flex:0 0 auto;display:grid;place-items:center;border-radius:7px;background:rgba(184,255,77,.12);border:1px solid rgba(184,255,77,.35);color:var(--lime);font-size:12px;}
+.offer-item div:last-child{color:var(--muted);font-size:14px;line-height:1.6;}
+.offer-item strong{color:var(--text);}
+.offer-price{padding:43px 40px 48px;text-align:center;background:linear-gradient(135deg,rgba(184,255,77,.085),rgba(92,124,255,.055));border-top:1px solid var(--line);}
+.price{margin:8px 0 3px;color:var(--white);font-size:80px;font-weight:850;letter-spacing:-.07em;line-height:.95;}
+.old-price{color:#646d7a;font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;text-decoration:line-through;}
+.offer-button{margin-top:25px;}
+.offer-note{margin-top:15px;color:#697281;font-size:10px;font-family:"SFMono-Regular",Consolas,monospace;}
+
+.guarantee{max-width:740px;margin:35px auto 0;padding:30px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);text-align:center;}
+.guarantee h3{margin:12px 0;color:var(--white);font-size:25px;letter-spacing:-.04em;}
+.guarantee p{margin:0;color:var(--muted);font-size:13px;line-height:1.7;}
+
+.about{display:grid;grid-template-columns:240px 1fr;gap:55px;align-items:start;}
+.about-photo{aspect-ratio:1;display:grid;place-items:center;padding:20px;border:1px dashed rgba(255,255,255,.2);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#606976;font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;line-height:1.7;text-align:center;}
+.about-copy h2{margin:14px 0 21px;font-size:clamp(40px,5vw,59px);}
+.about-copy p{max-width:730px;color:var(--muted);font-size:16px;line-height:1.75;}
+
+.faq{max-width:850px;margin:auto;}
+details{border-top:1px solid var(--line);}
+details:last-child{border-bottom:1px solid var(--line);}
+summary{list-style:none;cursor:pointer;padding:25px 5px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--white);font-size:18px;font-weight:750;letter-spacing:-.025em;}
+summary::-webkit-details-marker{display:none;}
+summary span{color:var(--lime);font-size:22px;font-weight:400;transition:transform .2s ease;}
+details[open] summary span{transform:rotate(45deg);}
+summary:focus-visible{outline:2px solid var(--lime);outline-offset:3px;}
+.answer{max-width:720px;padding:0 5px 28px;color:var(--muted);font-size:14px;line-height:1.75;}
+
+.final{position:relative;overflow:hidden;padding:145px 20px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(184,255,77,.1),transparent 52%),#080b10;}
+.final::before{content:"";position:absolute;width:600px;height:600px;left:50%;bottom:-500px;transform:translateX(-50%);background:radial-gradient(circle,rgba(92,124,255,.12),transparent 70%);filter:blur(25px);}
+.final h2{position:relative;max-width:980px;margin:0 auto 25px;font-size:clamp(48px,7vw,91px);}
+.final p{position:relative;max-width:620px;margin:auto;color:var(--muted);font-size:17px;line-height:1.7;}
+.final .cta{position:relative;margin-top:35px;}
+
+footer{padding:55px 0 100px;background:#05070a;border-top:1px solid var(--line);}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+.footer-title{margin-bottom:10px;color:var(--white);font-size:22px;font-weight:850;letter-spacing:-.035em;}
+footer p,footer li{color:#596170;font-size:12px;line-height:1.7;}
+footer a{color:#8e97a5;}
+footer a:hover{color:var(--white);}
+footer details{border-color:rgba(255,255,255,.07);}
+footer summary{padding:16px 2px;color:#9ba4b1;font-family:"SFMono-Regular",Consolas,monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+footer .answer{padding:0 2px 20px;color:#596170;font-size:11px;}
+footer .answer ul{padding-left:18px;margin:8px 0 0;}
+footer .answer li{margin-bottom:6px;}
+.disclaimer{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);color:#444c58;font-size:10px;line-height:1.7;}
+
+.mobile-buy{display:none;}
+
+@media (max-width:900px){
+  .hero-grid,.method,.about{grid-template-columns:1fr;}
+  .hero-grid{gap:60px;}
+  .phone{transform:none;}
+  .method-sticky{position:static;}
+  .problem-grid,.who-grid,.script-grid,.shots{grid-template-columns:1fr;}
+  .modules{grid-template-columns:1fr;}
+  .module,.module.featured{grid-column:auto;min-height:0;}
+  .about-photo{max-width:240px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .mobile-buy{position:fixed;display:flex;left:0;right:0;bottom:0;z-index:100;padding:10px 12px;background:rgba(5,7,10,.92);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(18px);}
+  .mobile-buy .cta{width:100%;min-height:52px;border-radius:10px;}
+}
+
+@media (max-width:600px){
+  .container{width:min(100% - 30px,var(--max));}
+  .nav{padding:18px 0;}
+  .nav-link{display:none;}
+  .hero{padding:55px 0 80px;}
+  .hero h1{font-size:50px;}
+  .hero-sub{font-size:17px;}
+  .hero-actions{align-items:stretch;flex-direction:column;}
+  .cta{width:100%;}
+  .hero-note{gap:10px;flex-direction:column;}
+  .trust-grid{grid-template-columns:1fr;}
+  .trust-item{border-right:0;border-bottom:1px solid var(--line);}
+  .trust-item:last-child{border-bottom:0;}
+  .section{padding:80px 0;}
+  .section h2{font-size:42px;}
+  .statement{padding:90px 18px;}
+  .statement h2{font-size:43px;}
+  .method{gap:55px;}
+  .ladder-step{padding-left:35px;}
+  .modules{gap:10px;}
+  .module{padding:27px;}
+  .preview-wrap{padding:80px 0;}
+  .script-body{padding:22px;}
+  .offer-head{padding:38px 23px;}
+  .offer-items{padding:10px 23px;}
+  .offer-price{padding:35px 23px 40px;}
+  .price{font-size:67px;}
+  .guarantee{padding:24px;}
+  .final{padding:90px 18px;}
+  .final h2{font-size:49px;}
+  footer{padding-bottom:100px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition:none !important;}
+}
+
+/* ---------- founder photo ---------- */
+.about-photo{padding:0;border:1px solid var(--line);overflow:hidden;background:#0b0f15;}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* ---------- checkout button + status ---------- */
+button.cta{font-family:inherit;cursor:pointer;}
+button.cta[disabled]{opacity:.6;cursor:not-allowed;transform:none;}
+.pay-status{margin-top:16px;min-height:20px;font-size:13px;line-height:1.6;}
+.pay-status.error{color:#ff8f8f;}
+.pay-status.ok{color:var(--lime);}
+.pay-success{margin-top:20px;padding:22px;border:1px solid rgba(184,255,77,.35);border-radius:14px;background:rgba(184,255,77,.07);text-align:left;}
+.pay-success h4{margin:0 0 8px;color:var(--white);font-size:17px;letter-spacing:-.02em;}
+.pay-success p{margin:0;color:var(--muted);font-size:13px;line-height:1.7;}
+.pay-success code{color:var(--lime);font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;}
+.wa-cta{margin-top:18px;width:100%;background:#25D366;border-color:rgba(255,255,255,.22);box-shadow:0 0 0 1px rgba(37,211,102,.15),0 14px 35px rgba(37,211,102,.16);}
+.wa-cta:hover{background:#31e675;box-shadow:0 0 0 1px rgba(37,211,102,.25),0 18px 45px rgba(37,211,102,.25);}
+.wa-fallback{margin-top:12px !important;font-size:11.5px !important;color:var(--muted-2) !important;}
+
+</style>
+
+
+<div class="topbar">
+  <span>LAUNCH PRICE: &#8377;999</span>
+  &nbsp;&middot;&nbsp; FIRST 100 BUYERS &nbsp;&middot;&nbsp; THEN &#8377;1,499
+</div>
+
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="logo">The Reply Ladder</div>
+    <a href="#offer" class="nav-link">Get the system &rarr;</a>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+
+      <div class="hero-kicker mono">
+        For agencies, freelancers &amp; service businesses
+      </div>
+
+      <h1 class="display">
+        Stop sending
+        <span class="gradient-text">random</span>
+        cold messages.
+      </h1>
+
+      <p class="hero-sub">
+        <strong>The Reply Ladder is the outreach system that takes a stranger
+        from first message, to reply, to qualified conversation, to booked call.</strong>
+        35 scripts across SMS, DM and email, the follow-up cadence that actually gets
+        answered, and exactly what to say once someone writes back.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#offer" class="cta">
+          Get The Reply Ladder
+          <span class="cta-arrow">&rarr;</span>
+        </a>
+        <span class="cta-small">
+          &#8377;999 today &middot; &#8377;1,499 after launch<br>
+          Digital PDF &middot; Sent on WhatsApp within 24 hours
+        </span>
+      </div>
+
+      <div class="hero-note">
+        <span>Works from your phone</span>
+        <span>No paid tools</span>
+        <span>Delivered on WhatsApp</span>
+      </div>
+
+    </div>
+
+
+    <div class="phone-wrap">
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-screen">
+
+          <div class="phone-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="phone-name">Jake</div>
+              <div class="phone-status">Active now</div>
+            </div>
+          </div>
+
+          <div class="messages">
+            <p class="msg-day">Day 1 &middot; Touch 1</p>
+            <div class="msg out">
+              hey working with a roofer in phoenix. they've been signing 2 to 3 new
+              jobs a month from our system. wanted to test it in your market. are you
+              taking on more or full?
+            </div>
+
+            <p class="msg-day">90 mins later &middot; Touch 2</p>
+            <div class="msg out">hey did you get my last message</div>
+
+            <div class="msg in">Yes im interested to try that out in my area</div>
+
+            <div class="msg out">what areas do y'all usually service?</div>
+
+            <div class="msg reply">
+              Phoenix and Scottsdale. Thursday at 3pm works, heres my email
+              jake@roofing.com
+            </div>
+          </div>
+
+          <div class="phone-result">
+            &#10003; Two touches. One question. Call booked.
+          </div>
+
+        </div>
+      </div>
+      <p class="phone-caption">Example thread &middot; not a screenshot</p>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-number">50</span>
+        <span class="trust-label">Messages sent</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">13</span>
+        <span class="trust-label">Replies</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">4</span>
+        <span class="trust-label">Calls booked</span>
+      </div>
+    </div>
+    <div class="trust-note">
+      My own logged numbers from August. Yours will differ.
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-label mono">The problem</div>
+      <h2 class="display">
+        Your outreach probably isn't broken.
+        <span class="green">Your process is.</span>
+      </h2>
+      <p>
+        Almost everyone who says cold outreach didn't work for them made one of the
+        three mistakes below. None of them get fixed by sending more messages, which
+        is why sending more messages feels like shouting into a void.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <article class="problem">
+        <div class="problem-num">01 / FOLLOW-UP</div>
+        <h3>One message, then silence.</h3>
+        <p>
+          You send it, nobody replies, you decide they aren't interested and move on.
+          But most replies never come from the first message. They come from the second
+          and third touch.
+        </p>
+      </article>
+
+      <article class="problem">
+        <div class="problem-num">02 / POSITIONING</div>
+        <h3>The message is about you.</h3>
+        <p>
+          "Hi, I'm a designer and I do X, are you interested?" reads as a pitch inside
+          three words. Your opening line has one job. Introducing yourself is not it.
+        </p>
+      </article>
+
+      <article class="problem">
+        <div class="problem-num">03 / CONVERSATION</div>
+        <h3>They reply, and you freeze.</h3>
+        <p>
+          You finally get "sure, tell me more" and then you improvise, over explain,
+          and lose them. Getting the reply is the easy half.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="statement">
+  <h2>
+    You don't need
+    <span class="accent">more messages.</span>
+    You need a message that knows what comes next.
+  </h2>
+</section>
+
+
+<!-- ================= PROOF ================= -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-label mono">Proof</div>
+      <h2 class="display">
+        Don't tell them you're good.
+        <span class="gradient-text">Show them.</span>
+      </h2>
+      <p>
+        Two replies from cold messages sent using the Sequence A opener in Module 01.
+        Both from contractors who had never heard of me before the message landed.
+      </p>
+    </div>
+
+    <div class="shots">
+
+      <div class="shot">
+        <div class="shot-img">
+          <img src="proof-1.jpg" alt="Cold outreach reply from a contractor saying they are open to taking on more projects and asking for details" loading="lazy">
+        </div>
+        <div class="shot-cap">
+          <span class="shot-tag">Reply</span>
+          <span>Open to more projects, asked for details, and gave his name unprompted. That is the opener doing its one job.</span>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="shot-img">
+          <img src="proof-2.jpg" alt="Cold outreach reply from a pool builder saying they are taking on more pools and would love to test it" loading="lazy">
+        </div>
+        <div class="shot-cap">
+          <span class="shot-tag">Reply</span>
+          <span>Straight into qualification four minutes later. No pitch sent yet, and he is already asking to test it.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="shot-foot">
+      Names and business details are cut out on purpose. These are replies, not signed
+      contracts, and they are my results rather than a forecast of yours. The book shows
+      you the exact message that produced them and what to send next.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section glow">
+  <div class="container method">
+
+    <div class="method-sticky">
+      <div class="mono green">The system</div>
+      <h2 class="display">
+        One prospect. Seven steps.
+        <span class="gradient-text">Zero guessing.</span>
+      </h2>
+      <p>
+        Every script in the book belongs to one of these seven rungs. That's the whole
+        idea: you always know where a conversation is, and you always know what the next
+        message has to do.
+      </p>
+    </div>
+
+    <div class="ladder">
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 01</div>
+        <h3>Prospect</h3>
+        <p>
+          How to build a list worth messaging, how to verify every number is a live mobile
+          before you burn it, and the compliance floor that keeps cold outreach a business
+          rather than a liability.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 02</div>
+        <h3>Opening message</h3>
+        <p>
+          The first message has exactly one job: earn a reply. Not sell, not introduce you,
+          not book anything. Two complete tracks are included, one for when you have a
+          result to name and one for when you have none yet.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 03</div>
+        <h3>Reply</h3>
+        <p>
+          The four replies you'll actually get, which are interested, curious, deflecting
+          and hostile, plus the response to each that keeps the conversation alive without
+          sounding desperate for it.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 04</div>
+        <h3>Qualification</h3>
+        <p>
+          Three questions that separate a real prospect from someone being polite, and that
+          prove you know the trade. Two are written for you. The third is the one only you
+          can write, and the book shows you how.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 05</div>
+        <h3>Follow-up</h3>
+        <p>
+          A seven touch cadence across thirty days. Each touch has its own reason to exist
+          so you're adding something rather than simply asking again.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 06</div>
+        <h3>Booked call</h3>
+        <p>
+          How to move from a chat thread to a time on the calendar without the "let me know
+          what suits you" loop, and why offering a phone call beats sending a meet link.
+        </p>
+      </div>
+
+      <div class="ladder-step">
+        <div class="step-label mono">Step 07</div>
+        <h3>The conversation</h3>
+        <p>
+          The part most script packs leave out. The pre-call commitment, the budget question,
+          the confirmation sequence, and no-show recovery.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-label mono">What's inside</div>
+      <h2 class="display">
+        Not another
+        <span class="gradient-text">swipe file.</span>
+      </h2>
+      <p>
+        A swipe file hands you words and leaves you to guess when to use them. This is
+        seven modules mapped onto the seven steps above, 35 scripts in total, and every
+        one carries the reason it works.
+      </p>
+    </div>
+
+    <div class="modules">
+
+      <article class="module">
+        <div class="module-number">Module 00</div>
+        <h3>Before you send anything</h3>
+        <p>
+          Picking one niche, the two offer tracks and which one you qualify for, building
+          and verifying the list, your sending setup, and the compliance floor.
+        </p>
+        <div class="count">Setup + compliance</div>
+      </article>
+
+      <article class="module">
+        <div class="module-number">Module 01</div>
+        <h3>Cold SMS</h3>
+        <p>
+          Two complete sequences. Sequence A for when you have a result to name.
+          Sequence B for when you don't. Plus qualification and the booking message.
+        </p>
+        <div class="count">8 scripts</div>
+      </article>
+
+      <article class="module">
+        <div class="module-number">Module 02</div>
+        <h3>Instagram &amp; Facebook DM</h3>
+        <p>
+          The four touch sequence plus the full inbound flow for when people message you
+          first, which is how I got my first client.
+        </p>
+        <div class="count">14 scripts</div>
+      </article>
+
+      <article class="module">
+        <div class="module-number">Module 03</div>
+        <h3>Cold email</h3>
+        <p>
+          Two opening emails, two follow-ups, subject lines and the reasoning behind the
+          structure.
+        </p>
+        <div class="count">4 emails</div>
+      </article>
+
+      <article class="module">
+        <div class="module-number">Module 04</div>
+        <h3>The follow-up ladder</h3>
+        <p>
+          The seven touch cadence, dated, with the job of each touch spelled out. Plus the
+          four reply types and what to send back to each one.
+        </p>
+        <div class="count">7 touch cadence</div>
+      </article>
+
+      <article class="module">
+        <div class="module-number">Module 06</div>
+        <h3>Making them come to you</h3>
+        <p>
+          The trade group play. Which groups to join, the exact post, and why answering
+          questions properly beats posting about yourself.
+        </p>
+        <div class="count">Inbound</div>
+      </article>
+
+      <article class="module featured">
+        <div class="module-number">Module 05</div>
+        <h3>What to say when they reply</h3>
+        <p>
+          Getting the reply is the easy half. This is the twenty minutes after it: booking
+          the call, the pre-call commitment that stops no-shows, the budget question you
+          ask in text rather than wasting an hour discovering there isn't one, the 24 hour
+          pre-frame, the three word confirmation that produces the biggest jump in show
+          rate in the whole book, and what to send when someone doesn't turn up. Most
+          people selling outreach scripts have never run the call they are preparing you for.
+        </p>
+        <div class="count">8 scripts</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="preview-wrap">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-label mono">Free preview</div>
+      <h2 class="display">
+        Take three of them
+        <span class="green">right now.</span>
+      </h2>
+      <p>
+        No email required. These are three complete scripts lifted straight out of the book.
+        The first one is what produced both replies above.
+      </p>
+    </div>
+
+    <div class="script-grid">
+
+      <article class="script">
+        <div class="script-top">Cold SMS &middot; Module 01</div>
+        <div class="script-body">
+          <div class="script-label">Use when</div>
+          <p class="script-use">
+            You have one result you can name, in one market, and you are going after the
+            same trade somewhere else.
+          </p>
+          <div class="script-label">Message</div>
+          <div class="script-message">hey working with a [trade] in [their market].
+
+they've been signing [number] new [jobs] a month from our system.
+
+wanted to test it in your market. are you taking on more or full?</div>
+          <div class="script-label">Why it works</div>
+          <div class="script-why">
+            A named market makes it specific rather than a blast. "Taking on more or full"
+            is a capacity question, not a sales question, so answering costs them nothing
+            and tells you everything.
+          </div>
+        </div>
+      </article>
+
+      <article class="script">
+        <div class="script-top">Cold DM &middot; Module 02</div>
+        <div class="script-body">
+          <div class="script-label">Use when</div>
+          <p class="script-use">
+            Instagram or Facebook, where anything that reads like a sales email gets
+            ignored on sight.
+          </p>
+          <div class="script-label">Message</div>
+          <div class="script-message">hey 👋
+
+if i send you 3 homeowners looking to [buy what you sell] next week...
+
+would y'all be able to handle it, or would your crew want to kill me? 😂</div>
+          <div class="script-label">Why it works</div>
+          <div class="script-why">
+            It is a capacity question disguised as a joke, so it is almost impossible to
+            read as a pitch. Both answers are useful.
+          </div>
+        </div>
+      </article>
+
+      <article class="script">
+        <div class="script-top">The call &middot; Module 05</div>
+        <div class="script-body">
+          <div class="script-label">Use when</div>
+          <p class="script-use">
+            Immediately after they book. This is the highest leverage message in the book.
+          </p>
+          <div class="script-label">Message</div>
+          <div class="script-message">quick context for our call, brother.
+
+1. what's your rough close rate on estimates these days?
+2. what would 2-3 more closed jobs a month actually mean revenue-wise?
+
+i'll plug that into projections so the call isn't a waste of anyone's time.</div>
+          <div class="script-label">Why it works</div>
+          <div class="script-why">
+            They do the arithmetic on what you're worth in their own numbers before you
+            ever pitch, and answering at all is a commitment.
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:42px">
+      <a href="#offer" class="cta">
+        I want all 35
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-intro">
+      <div class="section-label mono">Who it's for</div>
+      <h2 class="display">
+        Built for people who need a pipeline,
+        <span class="green">not likes.</span>
+      </h2>
+      <p>
+        The worked examples use pool builders and home service contractors, because that
+        is the market I run. Swap the trade, keep the ladder.
+      </p>
+    </div>
+
+    <div class="who-grid">
+
+      <article class="who-card">
+        <div class="mono green">ICP 01</div>
+        <h3>Agency &amp; lead gen operators</h3>
+        <p>
+          You sell appointments, leads or marketing to local businesses. Your problem is a
+          pipeline that goes quiet the moment you stop personally chasing it.
+        </p>
+      </article>
+
+      <article class="who-card">
+        <div class="mono green">ICP 02</div>
+        <h3>Freelancers &amp; consultants</h3>
+        <p>
+          Designers, editors, writers, developers, anyone selling services to businesses
+          instead of waiting on referrals.
+        </p>
+      </article>
+
+      <article class="who-card">
+        <div class="mono green">ICP 03</div>
+        <h3>Setters &amp; closers</h3>
+        <p>
+          You are paid on booked calls or closed deals. You need exact wording between a
+          cold number and a confirmed appointment.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="not-for">
+      <h3>This is NOT for you if...</h3>
+      <ul>
+        <li>You want something that closes people without you ever speaking to them. This system ends in a conversation.</li>
+        <li>You aren't willing to send at least 250 messages. Below that you won't have enough data to know whether anything is working.</li>
+        <li>You want templates to paste word for word. These work because you adapt them.</li>
+        <li>You want tricks for bypassing opt-out rules or carrier filters. Those are deliberately not in here, and the book explains why.</li>
+        <li>You don't have an offer yet. Good scripts make a good offer findable. They can't make a vague one sellable.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section offer-section" id="offer">
+  <div class="container">
+
+    <div class="offer-box">
+
+      <div class="offer-head">
+        <div class="mono green">The complete system</div>
+        <h2 class="display">The Reply Ladder</h2>
+        <p>Everything I use to turn a cold list into booked calls. 22 pages. One PDF.</p>
+      </div>
+
+      <div class="offer-items">
+
+        <div class="offer-item">
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>All seven modules, 35 scripts</strong><br>
+            Cold SMS, Instagram and Facebook DM, cold email, follow-up, the sales
+            conversation, and the inbound play.
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Both offer tracks</strong><br>
+            Sequence A for when you have a result to name, and Sequence B for when you
+            don't. Most people only ever get taught the first one.
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>The compliance floor</strong><br>
+            One page on opt-outs, identification and quiet hours. The difference between
+            a business and a liability.
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Tracker and pre-send checklist</strong><br>
+            The exact columns to log every message against, the three numbers to watch,
+            and the nine point check before your first message goes out.
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Every update, free, forever</strong><br>
+            When scripts are added, you get the new version at no extra cost. Your copy is
+            watermarked and licensed to you personally.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="how-deliver">
+        <div class="mono green" style="margin-bottom:14px;">How you get it</div>
+        <ol class="deliver-steps">
+          <li><b>Pay.</b> UPI, card or net banking, through Razorpay.</li>
+          <li><b>WhatsApp me on +91 96327 12005</b> with your email address and a screenshot of the payment.</li>
+          <li><b>I send your copy within 24 hours,</b> usually much sooner, watermarked with your name.</li>
+        </ol>
+        <p class="deliver-note">
+          Delivery is manual on purpose while I am watermarking every copy by hand. It
+          means one extra message from you, and it means I know exactly who has a copy.
+          You will get a WhatsApp button with your payment reference on it the moment
+          the payment goes through.
+        </p>
+      </div>
+
+      <div class="offer-price">
+        <div class="mono green">Today</div>
+        <div class="price">&#8377;999</div>
+        <div class="old-price">&#8377;1,499 after launch</div>
+
+        <button type="button" id="buy-button" class="cta offer-button">
+          Yes, I want in
+          <span class="cta-arrow">&rarr;</span>
+        </button>
+
+        <div class="offer-note">
+          UPI &middot; Cards &middot; Net banking
+        </div>
+
+        <div id="pay-status" class="pay-status" role="status" aria-live="polite"></div>
+        <div id="pay-success" class="pay-success" hidden>
+          <h4>Payment received. One more step.</h4>
+          <p>
+            Message me on WhatsApp with your <b>email address</b> and a screenshot of this
+            payment, and I will send your copy within 24 hours, watermarked with your name.
+          </p>
+          <p style="margin-top:10px;">
+            Your payment reference is <code id="pay-ref"></code>. Screenshot this page if
+            it is easier.
+          </p>
+          <a id="wa-link" class="cta wa-cta" href="#" target="_blank" rel="noopener">
+            Message me on WhatsApp
+            <span class="cta-arrow">&rarr;</span>
+          </a>
+          <p class="wa-fallback">
+            Button not working? Message <b>+91 96327 12005</b> on WhatsApp, or email
+            priyansh@sortxai.com with your payment reference.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="guarantee">
+      <div class="mono green">Guarantee</div>
+      <h3>Send 250 messages. Get nothing back? I'll refund you.</h3>
+      <p>
+        Use the scripts on 250 real prospects within 14 days. If not one single person
+        replies, send me your tracker and I'll refund you in full, no argument. I won't
+        refund "I changed my mind" or "I didn't get round to it", because this only works
+        if you actually send the messages.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container about">
+
+    <div class="about-photo">
+      <img src="priyansh.jpg" alt="Priyansh, founder of SortXAi" width="520" height="520">
+    </div>
+
+    <div class="about-copy">
+      <div class="mono green">Who made this</div>
+      <h2 class="display">I'm not a guru.</h2>
+      <p>
+        I'm Priyansh. I run SortXAi, and what I actually do is get homeowners in front of
+        pool builders and home service contractors. I get paid when they get an
+        appointment, which means if my messages don't work, I don't eat.
+      </p>
+      <p>
+        I'm not going to tell you I've taught thousands of people, because I haven't. What
+        I have is the outreach log, the replies, and recordings of the calls those replies
+        turned into. Every script in this book is lifted straight out of them, including
+        the ones I got wrong first.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-intro narrow">
+      <div class="section-label mono">Questions</div>
+      <h2 class="display">Before you buy.</h2>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Will this work for my niche?<span>+</span></summary>
+        <div class="answer">
+          The worked examples use pool builders and home service contractors, because that
+          is the market I run. The structure is built on how people react to hearing from
+          a stranger rather than on industry language, and Module 00 tells you which line
+          to change for your world. It works best if you sell a service to businesses or
+          professionals. It is a weaker fit if you sell a low cost product to consumers,
+          where the numbers rarely justify one to one outreach.
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need a following?<span>+</span></summary>
+        <div class="answer">
+          No. That's the whole point of cold outreach: you go to people directly instead of
+          waiting to be found. Module 06 covers the one inbound play in the book, which is
+          trade groups, and that works without a following too.
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need paid tools?<span>+</span></summary>
+        <div class="answer">
+          Not to start. Everything runs off your phone, a free email account and a
+          spreadsheet. Module 00 covers the tooling you eventually want at volume, a CRM
+          that sends and tracks, a scraper for list building and a number verifier, but I
+          would recommend not buying any of it until you have sent your first hundred
+          messages by hand.
+        </div>
+      </details>
+
+      <details>
+        <summary>What if I have no results yet?<span>+</span></summary>
+        <div class="answer">
+          Then you use Sequence B, which is built for exactly that and is a full track
+          rather than a footnote. Instead of a case study you lead with an offer they
+          cannot lose on, pay per appointment or pay per job. The book also tells you
+          plainly not to borrow someone else's results, and why that ends badly.
+        </div>
+      </details>
+
+      <details>
+        <summary>How fast will I see something?<span>+</span></summary>
+        <div class="answer">
+          You can read it in about an hour and send your first messages the same day.
+          Replies take days, not minutes. The follow-up ladder runs across thirty days by
+          design, and cutting it short is the most common reason people decide it didn't
+          work.
+        </div>
+      </details>
+
+      <details>
+        <summary>What exactly do I get, and how?<span>+</span></summary>
+        <div class="answer">
+          One PDF, 22 pages, seven modules and 35 scripts, plus the tracker spec and the
+          pre-send checklist. Delivery is manual: after you pay, WhatsApp me on
+          <b>+91 96327 12005</b> with your email address and a screenshot of the payment,
+          and I send your copy within 24 hours. It is usually much faster than that. Your
+          copy carries your name and number on every page because it is licensed to you
+          personally, which is why I stamp each one myself rather than sending everyone
+          the same file.
+        </div>
+      </details>
+
+      <details>
+        <summary>What if I pay and don't hear back?<span>+</span></summary>
+        <div class="answer">
+          Message me on +91 96327 12005 and I will sort it out. Razorpay also records the
+          email and phone number you use at checkout, so if you pay and never message me,
+          I can still see the sale and reach you. Nobody who pays goes without a copy. If
+          you have waited more than 24 hours, chase me. I would rather be chased than have
+          someone sitting on a payment and nothing to show for it.
+        </div>
+      </details>
+
+      <details>
+        <summary>What's the refund policy?<span>+</span></summary>
+        <div class="answer">
+          Send 250 messages using the scripts within 14 days. If not one person replies,
+          send me your tracker and I'll refund you in full. I don't refund change of mind,
+          or purchases where the scripts weren't used. Full terms are at the bottom of this
+          page.
+        </div>
+      </details>
+
+      <details>
+        <summary>Is cold outreach allowed?<span>+</span></summary>
+        <div class="answer">
+          Reaching out to businesses and professionals is normal practice, but cold texting
+          in particular is regulated and penalties can apply per message. The book has a
+          page on the compliance floor: honour every opt-out, keep it working, identify
+          yourself in the first message, and respect quiet hours and local consent rules.
+          It deliberately leaves out the tricks for stripping opt-outs and dodging carrier
+          filters. You are responsible for the rules that apply where you and your
+          prospects are.
+        </div>
+      </details>
+
+      <details>
+        <summary>Will this guarantee clients?<span>+</span></summary>
+        <div class="answer">
+          No, and be careful with anyone who tells you otherwise. What you get is a
+          structure and the exact scripts behind it. Whether that turns into clients depends
+          on your offer, your market and how many messages you actually send.
+        </div>
+      </details>
+
+      <details>
+        <summary>What if I have questions after buying?<span>+</span></summary>
+        <div class="answer">
+          WhatsApp me on +91 96327 12005. It is the same thread you used to claim your
+          copy, so you are already talking to me directly. I answer within 24 hours,
+          Monday to Friday. There's no coaching call included at this price and I won't
+          pretend there is, but if your first messages aren't landing, send them over and
+          I'll tell you what to change.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="final">
+  <h2 class="display">
+    Stop wondering what to send.
+    <span class="gradient-text">Know what comes next.</span>
+  </h2>
+  <p>
+    The next client you sign is already sitting on somebody's list. You don't need a
+    bigger audience. You need a system for turning a cold prospect into a real
+    conversation.
+  </p>
+  <a href="#offer" class="cta">
+    Get The Reply Ladder &middot; &#8377;999
+    <span class="cta-arrow">&rarr;</span>
+  </a>
+</section>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <div class="footer-title">The Reply Ladder</div>
+      <p>
+        Cold outreach scripts and the system behind them, for people who sell services.
+      </p>
+      <p style="margin-top:20px;">
+        SortXAi<br>
+        Whitefield, Bangalore 560067<br>
+        <a href="mailto:priyansh@sortxai.com">priyansh@sortxai.com</a><br>
+        +91 96327 12005<br>
+        Support hours: Monday to Friday, 10am to 7pm IST
+      </p>
+    </div>
+
+    <div>
+      <div class="mono" style="color:#8e97a5;margin-bottom:8px;">Legal</div>
+
+      <details>
+        <summary>Terms &amp; conditions<span>+</span></summary>
+        <div class="answer">
+          By purchasing The Reply Ladder from SortXAi you agree to the following.
+          <ul>
+            <li>The product is a digital PDF, licensed to you personally and watermarked with your name and phone number. It is delivered manually on WhatsApp after you provide an email address and proof of payment.</li>
+            <li>You may use the scripts in your own outreach, including commercially. You may not resell, redistribute, share or republish the product or its contents.</li>
+            <li>The product provides templates and guidance. We make no guarantee of any specific business result, income or number of clients. Outcomes depend on your offer, your market and your effort.</li>
+            <li>You are responsible for complying with all laws and platform rules that apply to your outreach, including anti-spam, consent and data protection rules in your jurisdiction and in your prospects'.</li>
+            <li>We may update the product. Existing buyers receive updates at no extra cost.</li>
+            <li>These terms are governed by the laws of India, with jurisdiction in Bangalore.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Privacy policy<span>+</span></summary>
+        <div class="answer">
+          We collect only what is needed to sell and deliver the product.
+          <ul>
+            <li>What we collect: your name, email address and phone number, from checkout and from the WhatsApp message you send to claim your copy.</li>
+            <li>Why: to deliver your purchase, to watermark your copy, and to provide support.</li>
+            <li>Payments are processed by Razorpay. We never see or store your card, UPI or bank details.</li>
+            <li>We do not sell or rent your data. We share it only with the service providers needed to run the business, such as our payment processor and email provider.</li>
+            <li>Purchase records are retained as required for tax and accounting purposes.</li>
+            <li>To access, correct or delete your data, or to stop receiving email from us, write to priyansh@sortxai.com.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Refund &amp; cancellation<span>+</span></summary>
+        <div class="answer">
+          Because this is a digital product delivered immediately, we offer a conditional
+          refund rather than a blanket one.
+          <ul>
+            <li>You qualify for a full refund if, within 14 days of purchase, you have sent at least 250 messages using the scripts, received zero replies, and can show us your outreach tracker.</li>
+            <li>Send requests to priyansh@sortxai.com with your order ID and your tracker.</li>
+            <li>Approved refunds are returned to the original payment method within 5 to 7 working days.</li>
+            <li>We do not refund change of mind requests, or purchases where the scripts have not been used.</li>
+            <li>Orders cannot be cancelled once the PDF has been sent to you, as it is a digital product.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Delivery<span>+</span></summary>
+        <div class="answer">
+          <ul>
+            <li>This is a digital product. Nothing is shipped physically.</li>
+            <li>Delivery is manual. After payment, message +91 96327 12005 on WhatsApp with your email address and proof of payment.</li>
+            <li>Your personalised PDF is then sent within 24 hours of that message, watermarked with your name and phone number.</li>
+            <li>If you have not received it 24 hours after messaging, chase us on the same number or at priyansh@sortxai.com.</li>
+            <li>There are no delivery or shipping charges.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Pricing<span>+</span></summary>
+        <div class="answer">
+          The Reply Ladder is &#8377;999 during the launch period for the first 100 buyers,
+          and &#8377;1,499 thereafter. All prices are in Indian Rupees and include applicable
+          taxes where charged. When the launch period ends the price changes and is not
+          reinstated.
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="container disclaimer">
+    &copy; 2026 SortXAi. All rights reserved.
+    <br><br>
+    Any results and replies shown on this page are my own individual results. They are not
+    typical, they have not been verified by any third party, and they are not a guarantee
+    that you will earn income or acquire clients. This product provides education and
+    templates only. Please make sure you are 18 or over before purchasing.
+  </div>
+</footer>
+
+
+<div class="mobile-buy">
+  <a href="#offer" class="cta">
+    Get it for &#8377;999
+    <span class="cta-arrow">&rarr;</span>
+  </a>
+</div>
+
+
+<script>
+document.querySelectorAll(".faq details").forEach(function(item){
+  item.addEventListener("toggle", function(){
+    if(item.open){
+      document.querySelectorAll(".faq details").forEach(function(other){
+        if(other !== item){ other.removeAttribute("open"); }
+      });
+    }
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(function(link){
+  link.addEventListener("click", function(event){
+    var target = document.querySelector(this.getAttribute("href"));
+    if(!target) return;
+    event.preventDefault();
+    target.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+});
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+(function () {
+  var button  = document.getElementById("buy-button");
+  var status  = document.getElementById("pay-status");
+  var success = document.getElementById("pay-success");
+  var payRef  = document.getElementById("pay-ref");
+  var waLink  = document.getElementById("wa-link");
+
+  if (!button) return;
+
+  /* Works whether the page sits at /, /reply, /reply/ or /reply/index.html. */
+  var apiBase = (function () {
+    var p = window.location.pathname.replace(/\/[^\/]*\.[^\/]*$/, "/");
+    if (p.charAt(p.length - 1) !== "/") p += "/";
+    return p + "api/";
+  })();
+
+  function say(message, kind) {
+    status.textContent = message || "";
+    status.className = "pay-status" + (kind ? " " + kind : "");
+  }
+
+  function unlock() {
+    button.disabled = false;
+    button.style.opacity = "";
+  }
+
+  async function postJSON(url, body) {
+    var response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body || {})
+    });
+    var data = await response.json().catch(function () { return {}; });
+    if (!response.ok) {
+      throw new Error(data.error || "Request failed");
+    }
+    return data;
+  }
+
+  button.addEventListener("click", async function () {
+    if (typeof window.Razorpay !== "function") {
+      say("Could not load the payment window. Check your connection and try again.", "error");
+      return;
+    }
+
+    button.disabled = true;
+    say("Starting secure checkout...");
+
+    var order;
+    try {
+      order = await postJSON(apiBase + "create-order");
+    } catch (error) {
+      unlock();
+      say(error.message || "Could not start the payment. Please try again.", "error");
+      return;
+    }
+
+    var checkout = new window.Razorpay({
+      key: order.key_id,
+      amount: order.amount,
+      currency: order.currency,
+      order_id: order.order_id,
+      name: "SortXAi",
+      description: "The Reply Ladder",
+      theme: { color: "#b8ff4d" },
+
+      handler: async function (response) {
+        say("Verifying your payment...");
+        try {
+          var result = await postJSON(apiBase + "verify-payment", {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature
+          });
+
+          if (result.verified) {
+            say("");
+            payRef.textContent = result.payment_id;
+
+            var waText =
+              "Hi Priyansh, I just bought The Reply Ladder.\n\n" +
+              "Payment reference: " + result.payment_id + "\n" +
+              "My email: \n\n" +
+              "Screenshot of the payment attached.";
+
+            waLink.href =
+              "https://wa.me/919632712005?text=" + encodeURIComponent(waText);
+
+            success.hidden = false;
+            button.textContent = "Payment complete";
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          } else {
+            unlock();
+            say("We could not verify that payment. Message +91 96327 12005 on WhatsApp and I will sort it out.", "error");
+          }
+        } catch (error) {
+          unlock();
+          say("Payment went through but verification failed. Do not pay again. Message +91 96327 12005 on WhatsApp with your payment id.", "error");
+        }
+      },
+
+      modal: {
+        ondismiss: function () {
+          unlock();
+          say("Checkout closed. Nothing was charged.");
+        }
+      }
+    });
+
+    checkout.on("payment.failed", function (response) {
+      unlock();
+      var reason = (response && response.error && response.error.description) || "The payment did not go through.";
+      say(reason + " Nothing was charged. You can try again.", "error");
+    });
+
+    checkout.open();
+  });
+})();
+</script>
+
+</body>
+</html>
